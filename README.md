@@ -41,14 +41,14 @@ ShadCN/UI components
 Netlify for deployment
 
 
-Key Features Implemented
- Authentication using Clerk (Login, Signup, and session management)
- Dynamic Profile Pages at /profile/[username]
- Profile Picture Upload using Uploadthing
- Post Image Upload
- Notification Page for user activities
- Real-time Feed Rendering (server components)
- Prisma schema + DB Migrations
+Key Features Implemented---->>>>
+ -Authentication using Clerk (Login, Signup, and session management)
+ -Dynamic Profile Pages at /profile/[username]
+ -Profile Picture Upload using Uploadthing
+ -Post Image Upload
+ -Notification Page for user activities
+ -Real-time Feed Rendering (server components)
+ -Prisma schema + DB Migrations
 
 src/
 ├── actions/               # Server-side logic (e.g., DB calls)
