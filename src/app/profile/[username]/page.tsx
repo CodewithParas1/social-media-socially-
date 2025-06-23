@@ -3,9 +3,16 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import ProfilePageClient from "./ProfilePageClient";
 
-// Dynamically generate metadata for the profile page
+// ✅ Define expected route parameters
+interface ProfilePageProps {
+  params: {
+    username: string;
+  };
+}
+
+// ✅ Dynamically generate metadata for the profile page
 export async function generateMetadata(
-  { params }: { params: { username: string } }
+  { params }: ProfilePageProps
 ): Promise<Metadata | undefined> {
   const user = await getProfileByUsername(params.username);
   if (!user) return;
@@ -16,8 +23,8 @@ export async function generateMetadata(
   };
 }
 
-// Main server component for profile page
-export default async function ProfilePageServer({ params }: { params: { username: string } }) {
+// ✅ Main server component for profile page
+export default async function ProfilePageServer({ params }: ProfilePageProps) {
   const user = await getProfileByUsername(params.username);
   if (!user) notFound();
 
