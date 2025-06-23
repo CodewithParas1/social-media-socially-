@@ -3,16 +3,9 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import ProfilePageClient from "./ProfilePageClient";
 
-// ✅ Make sure to match the expected structure for Next.js page props
-type ProfilePageProps = {
-  params: {
-    username: string;
-  };
-};
-
-// ✅ Dynamically generate metadata for the profile page
+// ✅ Inline types only — no aliasing
 export async function generateMetadata(
-  { params }: ProfilePageProps
+  { params }: { params: { username: string } }
 ): Promise<Metadata | undefined> {
   const user = await getProfileByUsername(params.username);
   if (!user) return;
@@ -23,8 +16,9 @@ export async function generateMetadata(
   };
 }
 
-// ✅ Main server component for profile page
-export default async function ProfilePageServer({ params }: ProfilePageProps) {
+export default async function ProfilePageServer(
+  { params }: { params: { username: string } }
+) {
   const user = await getProfileByUsername(params.username);
   if (!user) notFound();
 
