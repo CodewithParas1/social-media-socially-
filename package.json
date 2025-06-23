@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.22.0",
@@ -30,8 +31,7 @@
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",
     "tailwind-merge": "^3.3.1",
-    "uploadthing": "^7.7.3",
-    "postinstall": "prisma generate"
+    "uploadthing": "^7.7.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
