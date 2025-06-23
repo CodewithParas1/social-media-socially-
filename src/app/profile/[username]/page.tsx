@@ -3,12 +3,12 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import ProfilePageClient from "./ProfilePageClient";
 
-// ✅ Define expected route parameters
-interface ProfilePageProps {
+// ✅ Make sure to match the expected structure for Next.js page props
+type ProfilePageProps = {
   params: {
     username: string;
   };
-}
+};
 
 // ✅ Dynamically generate metadata for the profile page
 export async function generateMetadata(
