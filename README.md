@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+#Social Media App — **Socially**
 
-## Getting Started
+A modern full-stack social media application built using Next.js 15 App Router, Clerk authentication, Uploadthing, Prisma ORM, and TypeScript.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+##  Project Setup Instructions
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/social-media-socially-.git
+   cd social-media-socially-
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Install dependencies:
+    npm install
+    
+Set up the environment variables:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a .env file at the root and add your credentials. 
+        DATABASE_URL=your_postgresql_db_url
+        NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_key
+        CLERK_SECRET_KEY=your_clerk_secret
+        UPLOADTHING_SECRET=your_uploadthing_secret
+        UPLOADTHING_APP_ID=your_uploadthing_app_id
 
-## Learn More
+Push Prisma schema to the database:  npx prisma db push
 
-To learn more about Next.js, take a look at the following resources:
+Run the development server:  npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+##Technologies Used---->>>>
 
-## Deploy on Vercel
+Next.js 15 (App Router)
+React 18
+TypeScript
+Tailwind CSS
+Prisma ORM with PostgreSQL
+Clerk for authentication
+Uploadthing for file uploads
+ShadCN/UI components
+Netlify for deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Key Features Implemented
+ Authentication using Clerk (Login, Signup, and session management)
+ Dynamic Profile Pages at /profile/[username]
+ Profile Picture Upload using Uploadthing
+ Post Image Upload
+ Notification Page for user activities
+ Real-time Feed Rendering (server components)
+ Prisma schema + DB Migrations
+
+src/
+├── actions/               # Server-side logic (e.g., DB calls)
+├── api/uploadthing/       # Uploadthing route & config
+├── app/                   # Next.js App Router pages
+│   ├── profile/[username] # Dynamic profile pages
+│   ├── notifications/     # Notifications page
+│   ├── layout.tsx         # Root layout
+├── components/            # UI components
+├── lib/                   # Utility, upload, and middleware code
+├── prisma/                # Prisma schema and migration setup
+
+
+
