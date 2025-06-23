@@ -62,4 +62,7 @@ src/
 ├── prisma/                # Prisma schema and migration setup
 
 
+Delpoyed: https://social-app25.netlify.app/
+
+
 
